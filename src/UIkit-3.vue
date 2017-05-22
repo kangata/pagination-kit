@@ -71,7 +71,7 @@ export default {
 
             if (this.pageShow % 2 == 0) console.warn('The number of `pageShow` is even, try the odd number.')
 
-            if (this.pageShow > this.pagination.last_page) console.error('Your `pagination.last_page` less than `pageShow`')
+            // if (this.pageShow > this.pagination.last_page) console.error('Your `pagination.last_page` less than `pageShow`')
 
             if (this.pagination.current_page > Math.ceil(this.pageShow / 2)) {
                 this.from = this.pagination.current_page - Math.floor(this.pageShow / 2);
@@ -90,7 +90,7 @@ export default {
             let numbers = []
 
             for (let page = this.from; page <= this.to; page++) {
-                numbers.push(page)
+                if (page > 0) numbers.push(page)
             }
 
             return numbers
